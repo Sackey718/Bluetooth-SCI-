@@ -47,6 +47,7 @@ namespace BT_SCI
                 comboBoxPortSelect.Enabled = false;
                 buttonStart.Enabled = false;
                 buttonStop.Enabled = true;
+                buttonSend.Enabled = true;
             }
         }
 
@@ -59,8 +60,15 @@ namespace BT_SCI
         {
             myPort.Close();
             buttonStop.Enabled = false;
+            buttonSend.Enabled = false;
             buttonScan.Enabled = true;
             comboBoxPortSelect.Items.Clear();
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            myPort.WriteLine(textBoxSendData.Text);
+            textBoxSendData.Text = "";
         }
     }
 }

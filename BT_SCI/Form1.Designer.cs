@@ -40,6 +40,10 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // serialPortBluetooth
+            // 
+            this.serialPortBluetooth.WriteTimeout = 100;
+            // 
             // comboBoxPortSelect
             // 
             this.comboBoxPortSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -110,12 +114,14 @@
             // 
             // buttonSend
             // 
+            this.buttonSend.Enabled = false;
             this.buttonSend.Location = new System.Drawing.Point(397, 327);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 7;
             this.buttonSend.Text = "送信";
             this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // Form1
             // 
