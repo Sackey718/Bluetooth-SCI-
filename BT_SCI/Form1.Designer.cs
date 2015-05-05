@@ -35,31 +35,35 @@
             this.labelPort = new System.Windows.Forms.Label();
             this.buttonScan = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.buttonStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxPortSelect
             // 
+            this.comboBoxPortSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPortSelect.Enabled = false;
             this.comboBoxPortSelect.FormattingEnabled = true;
-            this.comboBoxPortSelect.Location = new System.Drawing.Point(270, 14);
+            this.comboBoxPortSelect.Location = new System.Drawing.Point(189, 14);
             this.comboBoxPortSelect.Name = "comboBoxPortSelect";
             this.comboBoxPortSelect.Size = new System.Drawing.Size(121, 20);
             this.comboBoxPortSelect.TabIndex = 0;
+            this.comboBoxPortSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxPortSelect_SelectedIndexChanged);
             // 
             // buttonStart
             // 
             this.buttonStart.Enabled = false;
-            this.buttonStart.Location = new System.Drawing.Point(397, 12);
+            this.buttonStart.Location = new System.Drawing.Point(316, 12);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "通信開始";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // labelPort
             // 
             this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(206, 17);
+            this.labelPort.Location = new System.Drawing.Point(125, 17);
             this.labelPort.Name = "labelPort";
             this.labelPort.Size = new System.Drawing.Size(58, 12);
             this.labelPort.TabIndex = 2;
@@ -84,11 +88,23 @@
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
+            // buttonStop
+            // 
+            this.buttonStop.Enabled = false;
+            this.buttonStop.Location = new System.Drawing.Point(397, 12);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(75, 23);
+            this.buttonStop.TabIndex = 5;
+            this.buttonStop.Text = "通信終了";
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonScan);
             this.Controls.Add(this.labelPort);
@@ -111,6 +127,7 @@
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.Button buttonScan;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button buttonStop;
     }
 }
 
