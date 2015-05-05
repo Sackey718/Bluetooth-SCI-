@@ -36,6 +36,8 @@
             this.buttonScan = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.textBoxSendData = new System.Windows.Forms.TextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxPortSelect
@@ -84,7 +86,7 @@
             this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(13, 41);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(459, 309);
+            this.richTextBox1.Size = new System.Drawing.Size(459, 280);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
@@ -99,11 +101,29 @@
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
+            // textBoxSendData
+            // 
+            this.textBoxSendData.Location = new System.Drawing.Point(13, 331);
+            this.textBoxSendData.Name = "textBoxSendData";
+            this.textBoxSendData.Size = new System.Drawing.Size(378, 19);
+            this.textBoxSendData.TabIndex = 6;
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(397, 327);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
+            this.buttonSend.TabIndex = 7;
+            this.buttonSend.Text = "送信";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.buttonSend);
+            this.Controls.Add(this.textBoxSendData);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonScan);
@@ -128,6 +148,8 @@
         private System.Windows.Forms.Button buttonScan;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.TextBox textBoxSendData;
+        private System.Windows.Forms.Button buttonSend;
     }
 }
 
