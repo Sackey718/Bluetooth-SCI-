@@ -13,7 +13,7 @@ namespace BT_SCI
 {
     public partial class Form1 : Form
     {
-        SerialPort myPort;
+        SerialPort myPort = null;
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +26,6 @@ namespace BT_SCI
             {
                 comboBoxPortSelect.Items.Add(port);
             }
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -78,6 +73,14 @@ namespace BT_SCI
                 MessageBox.Show("送信がタイムアウトしました\r\n接続を確認して下さい", "タイムアウト", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             textBoxSendData.Text = "";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (myPort != null)
+            {
+                myPort.Close();
+            }
         }
     }
 }
