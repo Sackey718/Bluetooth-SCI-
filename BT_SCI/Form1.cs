@@ -48,6 +48,7 @@ namespace BT_SCI
                 buttonStart.Enabled = false;
                 buttonStop.Enabled = true;
                 buttonSend.Enabled = true;
+                myPort.WriteTimeout = 100;
             }
         }
 
@@ -67,7 +68,15 @@ namespace BT_SCI
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            myPort.WriteLine(textBoxSendData.Text);
+            try
+            {
+                myPort.WriteLine(textBoxSendData.Text);
+
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("送信がタイムアウトしました\r\n接続を確認して下さい", "タイムアウト", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             textBoxSendData.Text = "";
         }
     }
