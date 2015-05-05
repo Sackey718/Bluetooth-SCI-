@@ -39,6 +39,7 @@
             // 
             // comboBoxPortSelect
             // 
+            this.comboBoxPortSelect.Enabled = false;
             this.comboBoxPortSelect.FormattingEnabled = true;
             this.comboBoxPortSelect.Location = new System.Drawing.Point(270, 14);
             this.comboBoxPortSelect.Name = "comboBoxPortSelect";
@@ -47,6 +48,7 @@
             // 
             // buttonStart
             // 
+            this.buttonStart.Enabled = false;
             this.buttonStart.Location = new System.Drawing.Point(397, 12);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
@@ -71,6 +73,7 @@
             this.buttonScan.TabIndex = 3;
             this.buttonScan.Text = "ポートスキャン";
             this.buttonScan.UseVisualStyleBackColor = true;
+            this.buttonScan.Click += new System.EventHandler(this.buttonScan_Click);
             // 
             // richTextBox1
             // 
@@ -91,9 +94,10 @@
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.comboBoxPortSelect);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "学科展SCIプログラム";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
