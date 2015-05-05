@@ -29,11 +29,84 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.serialPortBluetooth = new System.IO.Ports.SerialPort(this.components);
+            this.comboBoxPortSelect = new System.Windows.Forms.ComboBox();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.buttonScan = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // comboBoxPortSelect
+            // 
+            this.comboBoxPortSelect.FormattingEnabled = true;
+            this.comboBoxPortSelect.Location = new System.Drawing.Point(270, 14);
+            this.comboBoxPortSelect.Name = "comboBoxPortSelect";
+            this.comboBoxPortSelect.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxPortSelect.TabIndex = 0;
+            // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(397, 12);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.TabIndex = 1;
+            this.buttonStart.Text = "通信開始";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            // 
+            // labelPort
+            // 
+            this.labelPort.AutoSize = true;
+            this.labelPort.Location = new System.Drawing.Point(206, 17);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(58, 12);
+            this.labelPort.TabIndex = 2;
+            this.labelPort.Text = "COMポート";
+            // 
+            // buttonScan
+            // 
+            this.buttonScan.Location = new System.Drawing.Point(12, 12);
+            this.buttonScan.Name = "buttonScan";
+            this.buttonScan.Size = new System.Drawing.Size(78, 23);
+            this.buttonScan.TabIndex = 3;
+            this.buttonScan.Text = "ポートスキャン";
+            this.buttonScan.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(13, 41);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(459, 309);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.buttonScan);
+            this.Controls.Add(this.labelPort);
+            this.Controls.Add(this.buttonStart);
+            this.Controls.Add(this.comboBoxPortSelect);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "Form1";
+            this.Text = "学科展SCIプログラム";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.IO.Ports.SerialPort serialPortBluetooth;
+        private System.Windows.Forms.ComboBox comboBoxPortSelect;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.Button buttonScan;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
